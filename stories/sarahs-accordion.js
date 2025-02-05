@@ -30,5 +30,5 @@ __decorate([
 SarahsAccordion = __decorate([
     customElement('sarahs-accordion')
 ], SarahsAccordion);
-export { SarahsAccordion };
+export default SarahsAccordion;
 //# sourceMappingURL=sarahs-accordion.js.map

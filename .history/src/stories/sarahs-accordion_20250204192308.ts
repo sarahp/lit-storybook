@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('sarahs-accordion')
-class SarahsAccordion extends LitElement {
+export class SarahsAccordion extends LitElement {
   // Define a reactive property with a default value
   @property({ type: String }) override title: string = 'Accordion Title';
 
@@ -18,5 +18,3 @@ class SarahsAccordion extends LitElement {
     `;
   }
 }
-
-export default SarahsAccordion;
