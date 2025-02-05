@@ -1,6 +1,6 @@
 # LitElement in Storybook Example
 
-This is Sarah's example of using LitElement with Storybook to demonstrate how to set up and create reusable components with dynamic stories and controls.
+WIP: Work in Progress. This is Sarah's example of using LitElement with Storybook to demonstrate how to set up and create reusable components with dynamic stories and controls.
 
 ## Prerequisites
 
