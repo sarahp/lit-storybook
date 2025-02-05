@@ -24,17 +24,11 @@
     "plugins": [
       {
         "name": "ts-lit-plugin",
-        "strict": true,
-        "enforceStrictNullChecks": true,
-        "enforceStrictFunctionTypes": true,
-        "enforceStrictBindCallApply": true,
-        "enforceEnumValuesAndStrings": true,
-        "enforceIndexSignatureTypes": true
+        "strict": true
       }
     ],
-    "types": ["node", "mocha"],
-    "baseUrl": "./src"
+    "types": ["mocha"]
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": []
 }
