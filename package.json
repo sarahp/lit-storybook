@@ -2,23 +2,21 @@
   "name": "@lit/lit-starter-ts",
   "private": true,
   "version": "2.0.2",
-  "description": "A simple web component",
-  "main": "my-element.js",
-  "module": "my-element.js",
+  "description": "A storybook and lit instance for example components",
+  "main": "sarahpstudio-lit.js",
+  "module": "sarahpstudio-lit.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "clean": "rimraf my-element.{d.ts,d.ts.map,js,js.map} test/my-element.{d.ts,d.ts.map,js,js.map} test/my-element_test.{d.ts,d.ts.map,js,js.map}",
+    "clean": "rimraf sarahpstudio-lit.{d.ts,d.ts.map,js,js.map} test/sarahpstudio-lit.{d.ts,d.ts.map,js,js.map} test/sarahpstudio-lit_test.{d.ts,d.ts.map,js,js.map}",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
     "lint:lit-analyzer": "lit-analyzer",
     "format": "prettier \"**/*.{cjs,html,js,json,md,ts}\" --ignore-path ./.eslintignore --write",
-    "docs": "npm run docs:clean && npm run build && npm run analyze && npm run docs:build && npm run docs:assets && npm run docs:gen",
+    "docs": "npm run docs:clean && npm run build && npm run analyze && npm run docs:build && npm run docs:assets",
     "docs:clean": "rimraf docs",
-    "docs:gen": "eleventy --config=.eleventy.cjs",
-    "docs:gen:watch": "eleventy --config=.eleventy.cjs --watch",
-    "docs:build": "rollup -c --file docs/my-element.bundled.js",
+    "docs:build": "rollup -c --file docs/sarahpstudio-lit.bundled.js",
     "docs:assets": "cp node_modules/prismjs/themes/prism-okaidia.css docs/",
     "docs:serve": "wds --root-dir=docs --node-resolve --watch",
     "analyze": "cem analyze --litelement --globs \"src/**/*.ts\"",
@@ -30,7 +28,7 @@
     "test:watch": "wtr --watch",
     "test:prod": "MODE=prod wtr",
     "test:prod:watch": "MODE=prod wtr --watch",
-    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js",
+    "checksize": "rollup -c ; cat sarahpstudio-lit.bundled.js | gzip -9 | wc -c ; rm sarahpstudio-lit.bundled.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -42,23 +40,21 @@
   ],
   "author": "Google LLC",
   "license": "BSD-3-Clause",
-  "dependencies": {
-    "lit": "^3.2.0"
-  },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@chromatic-com/storybook": "^3.2.4",
     "@custom-elements-manifest/analyzer": "^0.6.3",
     "@open-wc/testing": "^4.0.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
     "@storybook/addon-essentials": "^8.5.3",
     "@storybook/blocks": "^8.5.3",
     "@storybook/test": "^8.5.3",
     "@storybook/web-components": "^8.5.3",
     "@storybook/web-components-vite": "^8.5.3",
+    "@types/leaflet": "^1.9.16",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.1",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
@@ -69,10 +65,13 @@
     "@webcomponents/webcomponentsjs": "^2.8.0",
     "eslint": "^8.15.0",
     "eslint-plugin-storybook": "^0.11.2",
+    "leaflet": "^1.9.4",
+    "lit": "^3.2.1",
     "lit-analyzer": "^2.0.3",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^4.18.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-summary": "^2.0.1",
     "storybook": "^8.5.3",
     "typescript": "~5.5.0"
@@ -82,5 +81,9 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "dependencies": {
+    "audit": "^0.0.6",
+    "fix": "^0.0.6"
   }
 }

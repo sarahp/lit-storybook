@@ -1,6 +1,8 @@
 # LitElement in Storybook Example
 
-WIP: Work in Progress. This is Sarah's example of using LitElement with Storybook to demonstrate how to set up and create reusable components with dynamic stories and controls.
+WIP: This is currently a work in progress project, built off of Storybook and a Lit Typescript starter project.
+
+This is Sarah's example of using LitElement with Storybook to demonstrate how to set up and create reusable components with dynamic stories and controls.
 
 ## Prerequisites
 
@@ -18,7 +20,34 @@ npx sb@latest init --builder storybook-builder-vite
 
 This initializes Storybook with Vite as the builder.
 
-## Step 2: Create a LitElement Component
+## Step 2: Update `package.json` Scripts
+
+Replace your current scripts section in `package.json` with the following to match your setup for LitElement, Storybook, and testing:
+
+### Updated Scripts
+```json
+"scripts": {
+  "build": "tsc",
+  "build:watch": "tsc --watch",
+  "clean": "rimraf src/**/*.js src/**/*.d.ts src/**/*.map",
+  "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
+  "lint:eslint": "eslint 'src/**/*.ts' 'stories/**/*.ts'",
+  "lint:lit-analyzer": "lit-analyzer",
+  "format": "prettier \"**/*.{ts,js,json,md,html}\" --ignore-path ./.eslintignore --write",
+  "serve": "wds --watch --root-dir=src",
+  "serve:prod": "MODE=prod npm run serve",
+  "storybook": "storybook dev -p 6006",
+  "build-storybook": "storybook build",
+  "test": "npm run test:dev && npm run test:prod",
+  "test:dev": "wtr 'test/**/*.test.ts'",
+  "test:watch": "wtr --watch 'test/**/*.test.ts'",
+  "test:prod": "MODE=prod wtr 'test/**/*.test.ts'"
+}
+```
+
+These updates simplify the setup by removing Eleventy-related scripts and focusing on Storybook, TypeScript, and testing with Web Test Runner.
+
+## Step 3: Create a LitElement Component
 
 Create a component file `sarahs-accordion.ts`:
 
@@ -58,7 +87,7 @@ export class SarahsAccordion extends LitElement {
 }
 ```
 
-## Step 3: Create the Story File
+## Step 4: Create the Story File
 
 Create a story file `sarahs-accordion.stories.ts`:
 
@@ -100,7 +129,7 @@ CustomAccordion.args = {
 };
 ```
 
-## Step 4: Run Storybook
+## Step 5: Run Storybook
 
 Start the Storybook server with:
 
@@ -110,7 +139,7 @@ npm run storybook
 
 By default, Storybook will be available at `http://localhost:6006`.
 
-## Step 5: Use Storybook Controls
+## Step 6: Use Storybook Controls
 
 With the setup complete, you can now interact with your component's `title` and `content` properties using the Storybook controls panel. This allows real-time updates without modifying code.
 
@@ -130,7 +159,7 @@ Lit 3.0 has very few breaking changes from Lit 2.0:
 
 Lit 3.0 should require no changes to upgrade from Lit 2.0 for the vast majority of users. Once the full release is published, most apps and libraries will be able to extend their npm version ranges to include both 2.x and 3.x, like `"^2.7.0 || ^3.0.0"`.
 
-Lit 2.x and 3.0 are _interoperable_: templates, base classes, directives, decorators, etc., from one version of Lit will work with those from another.
+Lit 2.x and 3.0 are *interoperable*: templates, base classes, directives, decorators, etc., from one version of Lit will work with those from another.
 
 Please file any issues you find on our [issue tracker](https://github.com/lit/lit/issues).
 
@@ -172,22 +201,6 @@ For local testing during development, use:
 npm test:watch
 ```
 
-### Dev Server
-
-To preview the project without additional build steps, use the dev server:
-
-```bash
-npm run serve
-```
-
-View the project at `http://localhost:8000/dev/index.html`.
-
-To serve against Lit's production mode:
-
-```bash
-npm run serve:prod
-```
-
 ### Editing
 
 If you use VS Code, install the [lit-plugin extension](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) for features like syntax highlighting, type-checking, and code completion.
@@ -202,17 +215,8 @@ npm run lint
 
 For formatting, use [Prettier](https://prettier.io/). It is pre-configured according to Lit's style.
 
-### Static Site Generation
-
-This project includes a static site generated with [eleventy](https://11ty.dev). The site is generated to `/docs` and can be served locally:
-
-```bash
-npm run docs:serve
-```
-
 For more information on bundling and publishing, see [Publishing best practices](https://lit.dev/docs/tools/publishing/) on the Lit site.
 
 ## Conclusion
 
 This guide demonstrates how to integrate LitElement with Storybook to create interactive and reusable stories. You can extend this approach by adding more components, styles, and stories to document your project fully.
-

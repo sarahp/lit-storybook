@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import './sarahs-accordion.css';
 
 @customElement('sarahs-accordion')
 class SarahsAccordion extends LitElement {

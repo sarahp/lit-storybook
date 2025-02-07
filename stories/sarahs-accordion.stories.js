@@ -13,14 +13,9 @@ const Template = ({ title, content }) => html `
     <p>${content}</p>
   </sarahs-accordion>
 `;
-export const Default = Template.bind({});
-Default.args = {
-    title: 'Accordion Title',
-    content: 'This is the default content inside the accordion.',
-};
-export const CustomAccordion = Template.bind({});
-CustomAccordion.args = {
-    title: 'My Custom Accordion Title',
-    content: 'This is custom content inside the accordion.',
+export const Basic = Template.bind({});
+Basic.args = {
+    title: 'Customize this Accordion Title',
+    content: 'Use the controls to change this accordion summary.',
 };
 //# sourceMappingURL=sarahs-accordion.stories.js.map

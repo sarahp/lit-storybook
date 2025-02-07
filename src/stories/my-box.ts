@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 
 @customElement('my-box')
 export class MyBox extends LitElement {
-  static styles = css`
+static override styles = css`
     :host {
       display: block;
       border: 1px solid #ccc;
@@ -15,7 +15,7 @@ export class MyBox extends LitElement {
 
   @property({ type: String }) content = 'Default content';
 
-  render() {
+override render() {
     return html`<div>${this.content}</div>`;
   }
 }

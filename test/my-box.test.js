@@ -6,13 +6,13 @@
 import { MyBox } from '../stories/my-box.js';
 import { assert, fixture } from '@open-wc/testing';
 import { html } from 'lit/static-html.js';
-suite('my-element', () => {
+suite('my-box', () => {
     test('is defined', () => {
-        const el = document.createElement('my-element');
+        const el = document.createElement('my-box');
         assert.instanceOf(el, MyBox);
     });
     test('renders with default values', async () => {
-        const el = await fixture(html `<my-element></my-element>`);
+        const el = await fixture(html `<my-box></my-box>`);
         assert.shadowDom.equal(el, `
       <h1>Hello, World!</h1>
       <button part="button">Click Count: 0</button>
