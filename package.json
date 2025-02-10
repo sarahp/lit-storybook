@@ -83,6 +83,12 @@
     ]
   },
   "dependencies": {
+    "@aurodesignsystem/auro-icon": "^6.1.7",
+    "@aurodesignsystem/design-tokens": "latest",
+    "lit-element": "^3.2.1",
+    "lit-html": "^2.2.1",
+    "lit-localize": "^3.0.1",
+    "lit-maps": "^0.1.2",
     "audit": "^0.0.6",
     "fix": "^0.0.6"
   }

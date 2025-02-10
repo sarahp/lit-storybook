@@ -4,7 +4,7 @@ import './sarahs-map';
 
 // Define the default export for Storybook
 export default {
-  title: 'Components/LocationMap',
+  title: 'Sarah\'s Components/LocationMap WIP',
   component: 'location-map',
   argTypes: {
     apiUrl: { control: 'text' },  // Allow the user to provide an API URL through Storybook controls

@@ -1,4 +1,5 @@
-import './LocationMap';
+import { StoryFn } from '@storybook/web-components';
+import './sarahs-map';
 declare const _default: {
     title: string;
     component: string;
@@ -9,5 +10,7 @@ declare const _default: {
     };
 };
 export default _default;
-export declare const Default: (args: any) => import("lit-html").TemplateResult<1>;
+export declare const Default: StoryFn<{
+    apiUrl: string;
+}>;
 //# sourceMappingURL=sarahs-map.stories.d.ts.map
