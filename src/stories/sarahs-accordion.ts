@@ -1,6 +1,6 @@
+import "@aurodesignsystem/auro-icon";
 import { LitElement, css, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import './sarahs-accordion.css';
 
 @customElement('sarahs-accordion')
 class SarahsAccordion extends LitElement {
@@ -36,6 +36,11 @@ class SarahsAccordion extends LitElement {
       padding: 0.5rem;
       border-top: 1px solid #ccc;
     }
+
+    /* Scoped styles for the summary marker */
+    summary::marker {
+      content: "U+2038";
+    }
   `;
 
   // Toggle expanded state when the details element is clicked
@@ -54,7 +59,7 @@ class SarahsAccordion extends LitElement {
           aria-expanded=${this.expanded}
           aria-controls=${contentId}
         >
-          ${this.title}
+          <auro-icon name="interface" category="chevron-down"></auro-icon>${this.title}
         </summary>
         <div id=${contentId} class="content" aria-labelledby=${summaryId}>
           <slot></slot>

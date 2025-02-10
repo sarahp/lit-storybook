@@ -2,7 +2,7 @@ import { html } from 'lit';
 import './my-box';
 
 export default {
-  title: 'Sarah\'s Components/Box',
+  title: 'Sarah\'s Components/Box WIP',
   component: 'my-box',
 };
 

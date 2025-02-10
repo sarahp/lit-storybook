@@ -1,8 +1,7 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { LitElement } from 'lit';
-import './sarahs-map.css';
-export declare class LocationMap extends LitElement {
+declare class LocationMap extends LitElement {
     static properties: {
         apiUrl: {
             type: StringConstructor;
@@ -12,6 +11,7 @@ export declare class LocationMap extends LitElement {
             state: boolean;
         };
     };
+    static styles: import("lit").CSSResult;
     apiUrl: string | null;
     locations: Array<any>;
     map: L.Map | null;
@@ -19,6 +19,8 @@ export declare class LocationMap extends LitElement {
     fetchLocations(): Promise<void>;
     initializeMap(): void;
     addMarkers(): void;
+    disconnectedCallback(): void;
     render(): import("lit-html").TemplateResult<1>;
 }
+export default LocationMap;
 //# sourceMappingURL=sarahs-map.d.ts.map

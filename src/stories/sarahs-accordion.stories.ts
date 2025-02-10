@@ -3,7 +3,7 @@ import { html, TemplateResult } from 'lit';
 import './sarahs-accordion';
 
 export default {
-  title: 'Sarah\'s Components/Accordion',
+  title: 'Sarah\'s Components/Accordion WIP',
   component: 'sarahs-accordion',
   argTypes: {
     title: { control: 'text', description: 'The title displayed in the summary of the accordion.' },
